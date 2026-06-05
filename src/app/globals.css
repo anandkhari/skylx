@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display-face: var(--font-display);
+  --font-interface-face: var(--font-interface);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,10 +17,31 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} 
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply min-h-full bg-background text-foreground font-interface-face;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display-face;
+  }
+
+  p,
+  span,
+  a,
+  li,
+  body {
+    @apply font-interface-face;
+  }
 }
