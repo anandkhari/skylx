@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import About from './About';
+import FAQ from './FAQ';
 import Footer from './Footer';
 import Hero from './hero';
 import Navbar from './Navbar';
@@ -65,10 +66,10 @@ export default function LandingPageClient() {
         <Navbar />
         <Hero isActive={isReady} onVideoReady={handleVideoReady} />
         <About isActive={isReady} />
-        <SpicesExport />
+       
         <Value />
         <TeamPremium />
-    
+        <FAQ />
         <Footer />
       </div>
     </>
