@@ -38,6 +38,6 @@ export const seoConfig = {
     'export infrastructure',
   ],
   ogImage: '/logo.jpeg',
-  contactPhone: '+1 (800) 555-0199',
+  contactPhone: '+91 70121 21843',
   locale: 'en_US',
 };

@@ -6,11 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const faqs = [
   {
     q: 'What services does Skylx provide?',
-    a: 'We specialise in Civil Engineering, Interior Fit-out, and MEP (Mechanical, Electrical & Plumbing) operations. From ground-up construction to precision finishing, we handle the full project lifecycle.'
-  },
-  {
-    q: 'How long has Skylx been operating?',
-    a: 'Skylx was established in 2015. Over a decade we have built a reputation for delivering complex developments for global Multinational Corporations across the region.'
+    a: 'Skylx specializes in high-grade international agricultural export alongside our core construction operations. We bridge the gap between dedicated local producers and global markets, establishing a transparent, highly structured supply chain to verify, grade, and deliver premium raw commodities with zero variance in purity and freshness.'
   },
   {
     q: 'Do you handle projects outside your home region?',
@@ -20,14 +16,15 @@ const faqs = [
     q: 'How do I get a quote for my project?',
     a: 'Reach out through our Contact section or call us directly. We will schedule an initial consultation, assess the project scope, and provide a detailed proposal within a few business days.'
   },
+ 
   {
-    q: 'What makes Skylx different from other contractors?',
-    a: 'Our edge is our people. Senior engineers with MNC-level experience lead every project. We do not sub-delegate quality — we are hands-on from concept to handover, with zero compromise on timelines or finish.'
+    q: 'How does Skylx ensure product quality?',
+    a: "At SKYLX EXPORTS, we understand that quality is one of the most important factors when choosing a supplier. That's why we partner with trusted manufacturers and suppliers, carefully inspect products before shipment, and ensure they meet the agreed specifications. Our focus is on delivering products that are reliable, consistent, and meet our customers' expectations every time."
   },
   {
-    q: 'Can Skylx manage both design and execution?',
-    a: 'Absolutely. We offer integrated design-and-build solutions, which streamlines communication, reduces cost overruns, and keeps accountability in a single team.'
-  },
+    q: 'How do you source your products?',
+    a: 'We source our products through a carefully vetted network of manufacturers and suppliers known for their quality, consistency, and ethical business practices. This allows us to provide our customers with dependable products, competitive value, and a reliable supply chain for international markets.'
+  }
 ];
 
 export default function FAQ() {

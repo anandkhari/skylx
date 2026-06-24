@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const PHONE_NUMBER = '+1 (800) 555-0199';
-const WHATSAPP_NUMBER = '18005550199';
+const PHONE_NUMBER = '+91 70121 21843';
+const WHATSAPP_NUMBER = '917012121843';
 
 const actions = [
   {

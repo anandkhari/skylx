@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="relative h-[60vh] pt-16 overflow-hidden flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/1117452/pexels-photo-1117452.jpeg')" }}
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/15318488/pexels-photo-15318488.jpeg" }}
         />
         <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 to-black/20" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full">
@@ -30,7 +30,7 @@ export default function ContactPage() {
             </p>
             <h1 className="font-display text-5xl sm:text-6xl text-white font-medium leading-tight mb-4">
               Let's Build <br />
-              <span className="text-sky-400">Together.</span>
+              <span className="text-white">Together.</span>
             </h1>
             <div className="w-12 h-px bg-sky-400 opacity-60" />
           </motion.div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 {[
                   {
                     label: 'Phone',
-                    value: '+971 XX XXX XXXX',
+                    value: '+91 70121 21843',
                     icon: (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
@@ -64,7 +64,7 @@ export default function ContactPage() {
                   },
                   {
                     label: 'Email',
-                    value: 'info@skylx.com',
+                    value: 'skylxexports@gmail.com',
                     icon: (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                   },
                   {
                     label: 'Address',
-                    value: 'Office 000, Building Name,\nCity, Country',
+                    value: 'Ward 17, Building No. 357, Karolkuniyil,\nUlliyeri, Kozhikode, Kerala – 673620',
                     icon: (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   },
                   {
                     label: 'Working Hours',
-                    value: 'Mon – Fri: 8:00 AM – 6:00 PM\nSat: 9:00 AM – 1:00 PM',
+                    value: 'Monday to Sunday: 10:00 AM – 7:00 PM',
                     icon: (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -178,7 +178,7 @@ export default function ContactPage() {
       {/* ── MAP ── */}
       <section className="h-[420px] border-b border-[#E8ECF2] overflow-hidden">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113599.54100778869!2d76.14084801620231!3d10.511545762119152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee15ed42d1bb%3A0x82e45aa016ca7db!2sThrissur%2C%20Kerala!5e1!3m2!1sen!2sin!4v1781257296138!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62567.454494917496!2d75.67951566995602!3d11.4462592711708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba663d9d640708d%3A0x6ecb82e94e21358e!2sUlliyeri%2C%20Kerala!5e0!3m2!1sen!2sin!4v1782043463325!5m2!1sen!2sin"
           className="w-full h-full border-0"
           allowFullScreen
           loading="lazy"

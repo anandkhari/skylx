@@ -3,6 +3,7 @@
 import React, { useCallback, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero({ isActive = false, onVideoReady }) {
   const hasReportedReady = useRef(false);
@@ -108,23 +109,21 @@ export default function Hero({ isActive = false, onVideoReady }) {
           className="flex flex-col sm:flex-row gap-5 justify-center items-center"
         >
           
-          {/* Primary Button - Removed rounded edges for brand compliance */}
-          <button className="group h-12 px-8 bg-[#1A6FD4] text-white text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#165db3] transition-all duration-300 flex items-center gap-3">
-            Start Exporting
+          <Link href="/contact" className="group h-12 px-8 bg-[#1A6FD4] text-white text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#165db3] transition-all duration-300 flex items-center gap-3">
+            Contact Us
             <ArrowRight
               size={16}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </Link>
 
-          {/* Secondary Button - Removed rounded edges for brand compliance */}
-          <button className="group h-12 px-8 bg-transparent text-white text-xs font-bold uppercase tracking-[0.12em] border border-white/30 hover:bg-white/10 transition-all duration-300 flex items-center gap-3">
-            View Logistics
+          <Link href="/services" className="group h-12 px-8 bg-transparent text-white text-xs font-bold uppercase tracking-[0.12em] border border-white/30 hover:bg-white/10 transition-all duration-300 flex items-center gap-3">
+            Explore Our Services
             <ArrowRight
               size={16}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </Link>
           
         </motion.div>
       </motion.div>

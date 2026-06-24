@@ -76,14 +76,16 @@ export default function SpicesExport() {
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <button className="group inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.15em] uppercase text-[#0D1B4B] pb-2 border-b-2 border-gray-200 hover:border-[#1A6FD4] transition-all duration-300">
+              <a
+                href="/spices"
+                className="group inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.15em] uppercase text-[#0D1B4B] pb-2 border-b-2 border-gray-200 hover:border-[#1A6FD4] transition-all duration-300"
+              >
                 View Commodity
-
                 <ArrowRight
                   size={16}
                   className="text-[#1A6FD4] transition-transform duration-300 group-hover:translate-x-1"
                 />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -99,18 +101,18 @@ export default function SpicesExport() {
             className="relative"
           >
             {/* Main Image */}
-            <div className="relative w-full aspect-[4/5] max-w-[450px] mx-auto lg:ml-auto lg:mr-0 shadow-2xl overflow-hidden bg-[#0D1B4B]">
+            <div className="relative w-full aspect-4/5 max-w-112.5 mx-auto lg:ml-auto lg:mr-0 shadow-2xl overflow-hidden bg-[#0D1B4B]">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
                 style={{
                   backgroundImage:
-                    "url('https://images.pexels.com/photos/9142634/pexels-photo-9142634.jpeg')",
+                    "url('https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg')",
                 }}
               />
             </div>
 
             {/* Decorative Blue Line */}
-            <div className="absolute -right-6 top-12 w-6 h-[1px] bg-[#1A6FD4] hidden lg:block" />
+            <div className="absolute -right-6 top-12 w-6 h-px bg-[#1A6FD4] hidden lg:block" />
           </motion.div>
 
         </div>

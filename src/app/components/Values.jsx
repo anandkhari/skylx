@@ -77,7 +77,7 @@ export default function ValuesPremium() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/37880222/pexels-photo-37880222.jpeg')",
+            "url('https://images.pexels.com/photos/24244234/pexels-photo-24244234.jpeg')",
         }}
       />
 

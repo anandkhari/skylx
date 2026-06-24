@@ -8,7 +8,6 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'Home',     href: '/'         },
-    { label: 'About',    href: '/#about'   },
     { label: 'Services', href: '/services' },
     { label: 'Contact',  href: '/contact'  },
   ];
@@ -19,7 +18,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <img src="/logo.jpeg" alt="SKYLX Logo" className="h-12 w-auto object-contain" />
+          <img src="/logo-bg.png" alt="SKYLX Logo" className="h-12 w-auto object-contain" />
         </a>
 
         {/* Desktop links */}

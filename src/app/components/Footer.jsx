@@ -33,11 +33,16 @@ export default function Footer() {
 
           {/* Column 3: Contact Info */}
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6">Headquarters</h4>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6">Contact</h4>
             <ul className="space-y-3 text-white/50 text-sm font-light">
-              <li>Global Logistics Hub</li>
-              <li>support@skylx.com</li>
-              <li>+1 (800) 555-0199</li>
+              <li className="leading-relaxed">Ward 17, Building No. 357, Karolkuniyil,<br />Ulliyeri, Kozhikode, Kerala – 673620</li>
+              <li>
+                <a href="mailto:skylxexports@gmail.com" className="hover:text-[#1A6FD4] transition-colors">skylxexports@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+917012121843" className="hover:text-[#1A6FD4] transition-colors">+91 70121 21843</a>
+              </li>
+              <li className="text-white/30 text-xs">Mon – Sun: 10:00 AM – 7:00 PM</li>
             </ul>
           </div>
 

@@ -15,56 +15,77 @@ export default function AboutPremium() {
   ];
 
   const content = {
-    story: (
-      <>
-        <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">Building Dreams, Delivering Quality.</h3>
-        <p className="text-gray-600 font-light mb-4 leading-relaxed">
-          Established in 2015, we have positioned ourselves as a premier execution force. Our foundation is built on deep expertise in Civil Engineering, Interior Fit-out, and MEP operations.
-        </p>
-        <p className="text-gray-600 font-light leading-relaxed">
-          Driven by a leadership team with extensive experience managing complex developments for global Multinational Corporations, we do not just execute projects; we engineer tailored solutions focused on absolute customer satisfaction.
-        </p>
-      </>
-    ),
-    mission: (
-      <>
-        <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">The Five Pillars of Execution</h3>
-        <ul className="space-y-4">
-          {[
-            { title: 'Deliver Excellence', desc: 'Striving for perfection through precision and innovation.' },
-            { title: 'Prioritize Satisfaction', desc: 'Building lasting relationships via transparency and reliability.' },
-            { title: 'Empower the Team', desc: 'Nurturing a rewarding environment for continuous growth.' },
-            { title: 'Embrace Innovation', desc: 'Adopting cutting-edge tech and sustainable solutions.' },
-            { title: 'Give Back', desc: 'Operating with absolute integrity and social responsibility.' }
-          ].map((item, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="text-[#1A6FD4] mt-1">✦</span>
-              <div>
-                <strong className="text-[#0D1B4B] text-sm block">{item.title}</strong>
-                <span className="text-gray-500 text-sm font-light">{item.desc}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </>
-    ),
-    vision: (
-      <>
-        <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">The Ultimate Benchmark</h3>
-        <div className="border-l-2 border-[#1A6FD4] pl-6 py-2">
-          <p className="font-display italic text-xl text-[#0D1B4B]/90 leading-relaxed">
-            "To be the most trusted and admired construction and maintenance partner in the region."
-          </p>
-        </div>
-        <p className="text-gray-600 font-light leading-relaxed mt-6">
-          We are building toward a future where our infrastructure sets the standard. By delivering exceptional quality and innovative solutions, we foster a thriving, inspiring environment that elevates both our clients and our workforce.
-        </p>
-      </>
-    )
+  story: (
+  <>
+    <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">
+      Connecting Producers with Global Markets
+    </h3>
+
+    <p className="text-gray-600 font-light mb-4 leading-relaxed">
+      Skylx was founded on a single belief: that the gap between a dedicated local
+      producer and a global market shouldn't exist. What separates them isn't
+      quality — it's visibility, access, and a trusted bridge.
+    </p>
+
+    <p className="text-gray-600 font-light leading-relaxed">
+      Every deal we make is built on transparency and legitimacy, with a
+      structured and clear workflow that removes the uncertainty often associated
+      with international trade. You always know who you're dealing with, what
+      you're getting, and why you can trust it.
+    </p>
+  </>
+),
+   mission: (
+  <>
+    <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">
+      Our Mission
+    </h3>
+
+    <div className="py-2">
+      <p className="font-display text-gray-600 leading-relaxed">
+        "To be the trusted bridge between world-class suppliers and global
+        businesses — connecting importers, distributors, and retailers across
+        every market with quality-assured products that power sustainable growth
+        and lasting success."
+      </p>
+    </div>
+
+    <p className="text-gray-600 font-light leading-relaxed mt-6">
+      Our mission is to simplify international trade by connecting reliable
+      suppliers with businesses worldwide through a foundation of trust,
+      transparency, and operational excellence. We are committed to delivering
+      quality-assured products, fostering long-term partnerships, and creating
+      value for every stakeholder across the global supply chain.
+    </p>
+  </>
+),
+   vision: (
+  <>
+    <h3 className="font-display text-3xl text-[#0D1B4B] mb-6">
+      Our Vision
+    </h3>
+
+    <div className="py-2">
+      <p className="font-display text-gray-600 leading-relaxed">
+        "To build a globally connected trade ecosystem where suppliers,
+        importers, and distributors thrive through reliable partnerships,
+        transparent processes, and sustainable growth."
+      </p>
+    </div>
+
+    <p className="text-gray-600 font-light leading-relaxed mt-6">
+      We envision a future where geographical boundaries no longer limit
+      opportunity. By fostering trust, transparency, and long-term
+      partnerships, we aim to create a seamless global marketplace that
+      empowers businesses, strengthens supply chains, and drives sustainable
+      growth for all stakeholders.
+    </p>
+  </>
+)
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden border-b border-[#E8ECF2]">
+    <section id="about" className="py-24 bg-white overflow-hidden border-b border-[#E8ECF2]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
