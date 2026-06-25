@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import ServicesHero from '../components/ServicesHero';
 import Footer from '../components/Footer';
 import SpicesExport from '../components/SpicesExport';
+import PepperExport from '../components/PepperExport';
 
 export const metadata = {
   title: 'Services',
@@ -13,7 +14,8 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <ServicesHero />
-       <SpicesExport />
+      <SpicesExport />
+      <PepperExport />
       <Footer />
     </>
   );
