@@ -5,8 +5,13 @@ import SpicesExport from '../components/SpicesExport';
 import PepperExport from '../components/PepperExport';
 
 export const metadata = {
-  title: 'Services',
-  description: 'Civil engineering, interior fit-out, and MEP services by Skylx.',
+  title: 'Export Products & Services',
+  description: 'Skylx exports premium agricultural commodities — GI-certified cardamom and Malabar pepper — from Kerala to global markets. Explore our product range and export capabilities.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Skylx Export Products — Cardamom & Pepper',
+    description: 'Explore our premium commodity export range: GI-certified cardamom and Malabar/Tellicherry pepper sourced direct from Kerala farms.',
+  },
 };
 
 export default function ServicesPage() {

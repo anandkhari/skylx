@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -55,6 +54,16 @@ const grades = [
   },
 ];
 
+// custom(i) variant — delay computed inside Framer Motion, not via inline objects on each render
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: (i % 3) * 0.1 },
+  }),
+};
+
 export default function CardamomGrades() {
   return (
     <section className="py-32 bg-white border-b border-[#E8ECF2]">
@@ -64,13 +73,10 @@ export default function CardamomGrades() {
           <p className="text-[11px] tracking-[0.15em] text-[#1A6FD4] uppercase font-bold mb-4">
             02 — Grade Specifications
           </p>
-
           <h2 className="font-display text-4xl sm:text-5xl text-[#0D1B4B] font-medium mb-6 max-w-xl leading-tight">
             Cardamom Grade Categories
           </h2>
-
-          <div className="w-12 h-[1px] bg-[#1A6FD4] mb-6 opacity-60" />
-
+          <div className="w-12 h-px bg-[#1A6FD4] mb-6 opacity-60" />
           <p className="text-sm text-gray-500 max-w-xl font-light leading-relaxed">
             We supply green cardamom across all commercial size grades. Each lot is
             lab-verified for moisture content, essential oil percentage, and freedom
@@ -82,44 +88,41 @@ export default function CardamomGrades() {
           {grades.map((grade, i) => (
             <motion.div
               key={grade.size}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.9,
-                ease: [0.16, 1, 0.3, 1],
-                delay: (i % 3) * 0.1,
-              }}
-              className="group border border-[#E8ECF2] bg-[#f5f7fb] overflow-hidden hover:border-[#1A6FD4]/40 hover:bg-white transition-all duration-300"
+              variants={cardVariants}
+              style={{ willChange: 'transform, opacity' }}
+              className="group border border-[#E8ECF2] bg-[#f5f7fb] overflow-hidden hover:border-[#1A6FD4]/40 hover:bg-white transition-colors duration-300"
             >
-              {/* Grade Image */}
+              {/* Image — will-change pre-promotes so hover scale has no first-frame jank */}
               <div className="relative h-56 w-full overflow-hidden">
                 <Image
                   src={grade.image}
                   alt={grade.label}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ willChange: 'transform' }}
                 />
               </div>
 
-              {/* Content */}
               <div className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <span className="font-display text-4xl text-[#87A878] font-medium leading-none">
                     {grade.size}
                   </span>
-
                   <span className="text-[10px] tracking-[0.15em] uppercase font-bold text-[#1A6FD4] border border-[#1A6FD4]/30 px-2 py-1 shrink-0 ml-3">
                     {grade.badge}
                   </span>
                 </div>
 
-                <div className="w-8 h-[1px] bg-[#87A878] mb-4 opacity-70 group-hover:w-16 transition-all duration-500" />
+                {/* scaleX from 50% to 100% — visually matches old w-8 → w-16, stays compositor-only */}
+                <div className="w-16 h-px bg-[#87A878] mb-4 opacity-70 origin-left scale-x-50 group-hover:scale-x-100 transition-transform duration-500" />
 
                 <h3 className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#0D1B4B] mb-3">
                   {grade.label}
                 </h3>
-
                 <p className="text-sm text-gray-500 font-light leading-relaxed">
                   {grade.description}
                 </p>
@@ -132,4 +135,3 @@ export default function CardamomGrades() {
     </section>
   );
 }
-

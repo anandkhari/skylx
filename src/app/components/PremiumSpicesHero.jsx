@@ -1,6 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const heroTransition = { duration: 1, ease: [0.16, 1, 0.3, 1] };
 
 export default function PremiumSpicesHero() {
   return (
@@ -10,14 +13,14 @@ export default function PremiumSpicesHero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.pexels.com/photos/9142634/pexels-photo-9142634.jpeg')" }}
       />
-
       <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/55 to-black/10" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={heroTransition}
+          style={{ willChange: 'transform, opacity' }}
         >
           <p className="text-[11px] tracking-[0.15em] text-[#87A878] uppercase font-bold mb-6">
             01 — Premium Commodity
@@ -31,12 +34,12 @@ export default function PremiumSpicesHero() {
             Sourced from the Cardamom Hills of Kerala — certified to global export
             standards and delivered with zero compromise on freshness or essential oil content.
           </p>
-          <a
+          <Link
             href="/contact"
-            className="inline-block text-xs text-white uppercase tracking-[0.12em] font-bold border border-[#1A6FD4] px-6 py-3 hover:bg-[#1A6FD4] rounded-lg transition-all duration-300"
+            className="inline-block text-xs text-white uppercase tracking-[0.12em] font-bold border border-[#1A6FD4] px-6 py-3 hover:bg-[#1A6FD4] rounded-lg transition-colors duration-300"
           >
             Request a Sample
-          </a>
+          </Link>
         </motion.div>
       </div>
 
