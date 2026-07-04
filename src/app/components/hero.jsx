@@ -74,9 +74,17 @@ export default function Hero({ isActive = false, onVideoReady }) {
         initial="hidden"
         animate={isActive ? "visible" : "hidden"}
       >
-        <motion.h1
+
+         <motion.h1
           variants={itemVariants}
           className="font-display text-5xl sm:text-6xl md:text-7xl text-white font-normal leading-[1.1] mb-6"
+        >
+          Skylx
+        </motion.h1>
+
+        <motion.h1
+          variants={itemVariants}
+          className="font-display text-5xl sm:text-6xl  text-white font-normal leading-[1.1] mb-6"
         >
           Exporting Excellence.
         </motion.h1>

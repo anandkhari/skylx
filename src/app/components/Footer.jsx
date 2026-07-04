@@ -6,17 +6,34 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         {/* --- BOTTOM HALF: STANDARD FOOTER --- */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
+
           {/* Column 1: Logo & Brief */}
           <div className="md:col-span-2">
-            <a href="#" className="font-display text-white text-2xl tracking-[0.15em] font-medium decoration-none block mb-4">
-              SKY<span className="text-[#1A6FD4]">LX</span>
+            <a href="#" className="block mb-4" aria-label="Skylx">
+              {/* Logo rendered via CSS mask so it shows solid white regardless of
+                  the source file's original colors. Swap '/logo.png' for your
+                  actual asset path if it lives elsewhere. */}
+              <div
+                role="img"
+                aria-label="Skylx logo"
+                className="h-10 w-40"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  WebkitMaskImage: 'url(/logo.png)',
+                  maskImage: 'url(/logo2.png)',
+                  WebkitMaskSize: 'contain',
+                  maskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'left center',
+                  maskPosition: 'left center',
+                }}
+              />
             </a>
             <p className="text-white/50 text-sm font-light max-w-sm leading-relaxed">
-              Exporting excellence. We are the absolute infrastructure connecting verified local production to global distribution networks.
+              We are the absolute infrastructure connecting verified local production to global distribution networks.
             </p>
           </div>
-
           {/* Column 2: Quick Links */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6">Navigation</h4>
@@ -30,7 +47,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
           {/* Column 3: Contact Info */}
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6">Contact</h4>
@@ -45,9 +61,7 @@ export default function Footer() {
               <li className="text-white/30 text-xs">Mon – Sun: 10:00 AM – 7:00 PM</li>
             </ul>
           </div>
-
         </div>
-
         {/* --- COPYRIGHT BAR --- */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
           <p className="text-white/30 text-[11px] uppercase tracking-wider mb-4 md:mb-0">
@@ -58,7 +72,6 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
-
       </div>
     </footer>
   );

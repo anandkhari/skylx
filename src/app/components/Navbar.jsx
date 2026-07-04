@@ -24,7 +24,7 @@ export default function Navbar() {
 
         {/* Logo — Next.js Image for automatic optimisation */}
         <Link href="/" className="flex items-center">
-          <Image src="/logo-bg.png" alt="SKYLX Logo" width={120} height={48} className="h-12 w-auto object-contain" priority />
+          <Image src="/logo2.png" alt="SKYLX Logo" width={160} height={64} className="h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Desktop links */}

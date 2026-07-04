@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // All static data outside component — one allocation at module load, never on re-render
-const IMAGE_URL = 'https://images.pexels.com/photos/3848793/pexels-photo-3848793.jpeg';
+const IMAGE_URL = 'https://images.pexels.com/photos/122164/pexels-photo-122164.jpeg';
 
 const tabs = [
   { id: 'story', label: 'The Story' },
@@ -76,52 +76,73 @@ const tabContent = {
 // This cubic-bezier creates that heavy, cinematic glide
 const premiumEase = [0.22, 1, 0.36, 1];
 
-// Image gets a longer duration to establish the scene
-const imageTransition = { 
-  duration: 5, 
-  ease: premiumEase 
-};
-
-// Text gets a delay so it follows the image, creating a staggered sequence
-const textTransition = { 
-  duration: 1.2, 
-  ease: premiumEase, 
-  delay: 0.4 
+// The whole card (image + text) now moves as a single unit.
+// Desktop slides in from the left; mobile slides up from below —
+// a horizontal slide on a narrow viewport causes overflow/scroll jank.
+const cardTransition = {
+  duration: 1,
+  ease: premiumEase,
 };
 
 const tabContentTransition = { duration: 0.3 };
 
+// Matches Tailwind's `lg` breakpoint used by the grid below (lg:grid-cols-2)
+const MOBILE_QUERY = '(max-width: 1023px)';
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    setIsMobile(mql.matches);
+
+    const handleChange = (e) => setIsMobile(e.matches);
+    mql.addEventListener('change', handleChange);
+    return () => mql.removeEventListener('change', handleChange);
+  }, []);
+
+  return isMobile;
+}
+
 export default function AboutPremium() {
   const [activeTab, setActiveTab] = useState('story');
+  const isMobile = useIsMobile();
+
+  const cardInitial = isMobile
+    ? { opacity: 0, y: 60 }
+    : { opacity: 0, x: -120 };
+
+  const cardWhileInView = isMobile
+    ? { opacity: 1, y: 0 }
+    : { opacity: 1, x: 0 };
 
   return (
     <section id="about" className="py-24 bg-white overflow-hidden border-b border-[#E8ECF2]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        {/* SINGLE UNIT: image + text now animate together as one block */}
+        <motion.div
+          initial={cardInitial}
+          whileInView={cardWhileInView}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={cardTransition}
+          style={{ willChange: 'transform, opacity' }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+        >
 
           {/* LEFT: image */}
-          <motion.div
-            initial={{ opacity: 0, x: -200 }} // Increased start distance for more impact
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }} // Trigger when 30% is visible
-            transition={imageTransition}
-            style={{ willChange: 'transform, opacity' }}
-            className="w-full max-w-100 mx-auto h-112.5 rounded-lg shadow-2xl overflow-hidden"
-          >
+          <div className="relative w-full max-w-120 mx-auto h-112.5 rounded-lg shadow-2xl overflow-hidden">
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${IMAGE_URL})` }}
             />
-          </motion.div>
+            {/* Brand-blue tint so the photo matches the rest of the site's palette */}
+            {/* <div className="absolute inset-0 bg-[#3e74b6] mix-blend-multiply opacity-40 pointer-events-none" /> */}
+            <div className="absolute inset-0 bg-[#0D1B4B]/10 pointer-events-none" />
+          </div>
 
           {/* RIGHT: content */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }} // Increased drop distance to emphasize the slide up
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={textTransition} // Applies the 0.4s delay
-            style={{ willChange: 'transform, opacity' }}
-          >
+          <div>
             <p className="text-[11px] tracking-[0.12em] text-[#1A6FD4] uppercase font-bold mb-6">
               01 — Identity &amp; Purpose
             </p>
@@ -162,9 +183,10 @@ export default function AboutPremium() {
             <button className="mt-8 text-xs text-[#0D1B4B] font-bold uppercase tracking-widest border-b border-[#0D1B4B] pb-1 hover:text-[#1A6FD4] hover:border-[#1A6FD4] transition-colors">
               Learn More →
             </button>
-          </motion.div>
+          </div>
 
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
