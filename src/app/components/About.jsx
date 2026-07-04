@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // All static data outside component — one allocation at module load, never on re-render
@@ -72,61 +72,34 @@ const tabContent = {
   ),
 };
 
-// --- PREMIUM ANIMATION CONFIGURATION ---
-// This cubic-bezier creates that heavy, cinematic glide
-const premiumEase = [0.22, 1, 0.36, 1];
-
-// The whole card (image + text) now moves as a single unit.
-// Desktop slides in from the left; mobile slides up from below —
-// a horizontal slide on a narrow viewport causes overflow/scroll jank.
-const cardTransition = {
-  duration: 1,
-  ease: premiumEase,
+// --- SIMPLE ANIMATION ---
+// One fade + slide-up, same on every screen size. No JS breakpoint detection,
+// no matchMedia listener, no branching — just CSS-driven motion that Framer
+// can run identically regardless of viewport width.
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
 };
 
 const tabContentTransition = { duration: 0.3 };
 
-// Matches Tailwind's `lg` breakpoint used by the grid below (lg:grid-cols-2)
-const MOBILE_QUERY = '(max-width: 1023px)';
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mql = window.matchMedia(MOBILE_QUERY);
-    setIsMobile(mql.matches);
-
-    const handleChange = (e) => setIsMobile(e.matches);
-    mql.addEventListener('change', handleChange);
-    return () => mql.removeEventListener('change', handleChange);
-  }, []);
-
-  return isMobile;
-}
-
 export default function AboutPremium() {
   const [activeTab, setActiveTab] = useState('story');
-  const isMobile = useIsMobile();
-
-  const cardInitial = isMobile
-    ? { opacity: 0, y: 60 }
-    : { opacity: 0, x: -120 };
-
-  const cardWhileInView = isMobile
-    ? { opacity: 1, y: 0 }
-    : { opacity: 1, x: 0 };
 
   return (
     <section id="about" className="py-24 bg-white overflow-hidden border-b border-[#E8ECF2]">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
 
-        {/* SINGLE UNIT: image + text now animate together as one block */}
+        {/* SINGLE UNIT: image + text animate together as one block */}
         <motion.div
-          initial={cardInitial}
-          whileInView={cardWhileInView}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          transition={cardTransition}
-          style={{ willChange: 'transform, opacity' }}
+          variants={cardVariants}
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
 
@@ -137,7 +110,7 @@ export default function AboutPremium() {
               style={{ backgroundImage: `url(${IMAGE_URL})` }}
             />
             {/* Brand-blue tint so the photo matches the rest of the site's palette */}
-            {/* <div className="absolute inset-0 bg-[#3e74b6] mix-blend-multiply opacity-40 pointer-events-none" /> */}
+            <div className="absolute inset-0 bg-[#1A6FD4] mix-blend-multiply opacity-40 pointer-events-none" />
             <div className="absolute inset-0 bg-[#0D1B4B]/10 pointer-events-none" />
           </div>
 
